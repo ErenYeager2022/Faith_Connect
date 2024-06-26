@@ -1,0 +1,111 @@
+//<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PrayerMeditationGuides.Default" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer and Meditation Guides</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #0066cc;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .guide-section {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .customizable-prayer-list, .daily-devotionals {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            background: #0066cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #004999;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <h1>Prayer and Meditation Guides</h1>
+        </header>
+
+        <main>
+            <section class="guide-section">
+                <h2>Guided Prayers</h2>
+                <p>Join us for guided prayers to strengthen your faith and bring peace to your mind.</p>
+                <asp:Button ID="btnGuidedPrayers" runat="server" Text="Start a Guided Prayer" CssClass="btn" OnClick="btnGuidedPrayers_Click" />
+            </section>
+
+            <section class="guide-section">
+                <h2>Meditation Sessions</h2>
+                <p>Participate in our meditation sessions designed to calm your mind and soul.</p>
+                <asp:Button ID="btnMeditationSessions" runat="server" Text="Begin Meditation" CssClass="btn" OnClick="btnMeditationSessions_Click" />
+            </section>
+
+            <section class="guide-section customizable-prayer-list">
+                <h2>Customizable Prayer List</h2>
+                <ul>
+                    <li>Morning Prayer</li>
+                    <li>Evening Prayer</li>
+                    <li>Prayer for Peace</li>
+                    <li>Prayer for Strength</li>
+                </ul>
+                <asp:Button ID="btnCustomizablePrayerList" runat="server" Text="Customize Your Prayer List" CssClass="btn" OnClick="btnCustomizablePrayerList_Click" />
+            </section>
+
+            <section class="guide-section daily-devotionals">
+                <h2>Daily Devotionals</h2>
+                <ul>
+                    <li>Devotional for June 25, 2024</li>
+                    <li>Devotional for June 24, 2024</li>
+                    <li>Devotional for June 23, 2024</li>
+                    <li>Devotional for June 22, 2024</li>
+                </ul>
+                <asp:Button ID="btnDailyDevotionals" runat="server" Text="Read More Devotionals" CssClass="btn" OnClick="btnDailyDevotionals_Click" />
+            </section>
+        </main>
+    </form>
+</body>
+</html>

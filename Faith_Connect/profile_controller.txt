@@ -1,0 +1,44 @@
+using System;
+using System.Web;
+using System.Web.Mvc;
+using YourNamespace.Models;
+
+//namespace
+{
+    public class ProfileController : Controller
+    {
+        public ActionResult Index()
+        {
+                     var profile = new Profile
+            {
+                Id = 1,
+                Username = "Kervie",
+                Occupation = "IT Student",
+                About = "Write something about yourself...",
+                Email = "kervie@example.com",
+                Phone = "123-456-7890",
+                Address = "123 Main St, Anytown, USA",
+                Status = "Single",
+                ProfileImage = "~/Content/profile-pic.jpg"
+            };
+
+            return View(profile);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Profile profile, HttpPostedFileBase profilePhoto)
+        {
+            if (profilePhoto != null && profilePhoto.ContentLength > 0)
+            {
+                // Save the file to the server
+                var fileName = System.IO.Path.GetFileName(profilePhoto.FileName);
+                var path = System.IO.Path.Combine(Server.MapPath("~/Content/"), fileName);
+                profilePhoto.SaveAs(path);
+                profile.ProfileImage = "~/Content/" + fileName;
+            }
+
+            // Save profile sa database wapahuman database
+            return RedirectToAction("Index");
+        }
+    }
+}

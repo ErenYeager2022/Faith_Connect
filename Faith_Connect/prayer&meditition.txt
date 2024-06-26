@@ -1,0 +1,36 @@
+using System;
+using System.Web.UI;
+
+namespace PrayerMeditationGuides
+{
+    public partial class Default : Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+        }
+
+        protected void btnGuidedPrayers_Click(object sender, EventArgs e)
+        {
+            // Redirect to Guided Prayers page or handle the logic
+            Response.Redirect("GuidedPrayers.aspx");
+        }
+
+        protected void btnMeditationSessions_Click(object sender, EventArgs e)
+        {
+            // Redirect to Meditation Sessions page or handle the logic
+            Response.Redirect("MeditationSessions.aspx");
+        }
+
+        protected void btnCustomizablePrayerList_Click(object sender, EventArgs e)
+        {
+            // Redirect to Customizable Prayer List page or handle the logic
+            Response.Redirect("CustomizablePrayerList.aspx");
+        }
+
+        protected void btnDailyDevotionals_Click(object sender, EventArgs e)
+        {
+            // Redirect to Daily Devotionals page or handle the logic
+            Response.Redirect("DailyDevotionals.aspx");
+        }
+    }
+}

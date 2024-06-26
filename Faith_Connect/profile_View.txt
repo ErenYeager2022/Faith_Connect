@@ -1,0 +1,42 @@
+//tiwasonon @model 
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-info">
+            <img id="profile-image" src="@Url.Content(Model.ProfileImage)" alt="Profile Picture">
+            @using (Html.BeginForm("Save", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <!-- Label for the file input -->
+                <label for="profile-photo" class="change-profile-btn">Change Profile Picture</label>
+                <!-- File input -->
+                <input type="file" id="profile-photo" name="profilePhoto" accept="image/*">
+                <h1 contenteditable="true" id="username">@Model.Username</h1>
+                <p contenteditable="true" id="occupation">@Model.Occupation</p>
+                <div class="profile-details">
+                    <h2>About Me</h2>
+                    <textarea id="about" rows="5" cols="50" name="About">@Model.About</textarea>
+                    <h2>Contact Information</h2>
+                    <input type="email" id="email" name="Email" placeholder="Email" value="@Model.Email">
+                    <input type="tel" id="phone" name="Phone" placeholder="Phone" value="@Model.Phone">
+                    <input type="text" id="address" name="Address" placeholder="Address" value="@Model.Address">
+                    <input type="text" id="status" name="Status" placeholder="Status" value="@Model.Status">
+                    <button type="submit">Save</button>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

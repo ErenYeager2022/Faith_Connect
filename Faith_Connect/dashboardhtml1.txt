@@ -1,0 +1,67 @@
+@{
+    ViewBag.Title = "Faith Connect Dashboard";
+    // Wapa nahuman
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/dashboard.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Faith Connect University</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Activity">
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">Friends</a>
+            <a href="#">Notifications</a>
+            <a href="#">Profile</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>News Feed</li>
+                <li>Watch</li>
+                <li>Groups</li>
+                <li>Events</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="post-box">
+                <textarea placeholder="What's on your mind?"></textarea>
+                <button>Post</button>
+            </div>
+            <div class="posts">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-author">Engr.Verdun</div>
+                        <div class="post-time">2 hrs ago</div>
+                    </div>
+                    <div class="post-content">
+                        This is a sample post.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <h3>Sponsored</h3>
+            <div class="ad">
+                <p>Ad content here</p>
+            </div>
+            <h3>Contacts</h3>
+            <ul>
+                <li>Friend 1</li>
+                <li>Friend 2</li>
+                <li>Friend 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
